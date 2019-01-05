@@ -1,0 +1,36 @@
+@keyframes highlight-start {
+    from { border: 1px solid black; }
+    to { 
+        border: 1px solid rgba(255,255,153,.5);
+        box-shadow: 0 0 22px #FFFFCC;
+    }
+}
+
+@keyframes highlight-end {
+    from { 
+        border: 1px solid rgba(255,255,153,.5);
+        box-shadow: 0 0 22px #FFFFCC;
+    }
+    to { border: 1px solid black; }
+}
+
+.highlight-start {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: black;
+    padding: 5px;
+    animation: 
+        highlight-start 1.2s,
+        highlight-end 1.2s 1.2s;
+    animation-fill-mode: forwards;    
+}
+
+.highlight-end {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: black;
+    padding: 5px;
+    border: 1px solid black;
+}

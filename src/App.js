@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Notification from './components/Notification';
+import BoarderHighlight from './components/BoarderHighlight';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+
+    this.notification = React.createRef();
+  }
+
+  showNotification = (e) => {
+    e.preventDefault();
+
+    this.notification.current.show();
+  }
+
   render() {
     return (
-      <div className="App">
+      <div>        
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <BoarderHighlight ref={this.notification} />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
@@ -18,8 +31,9 @@ class App extends Component {
             rel="noopener noreferrer"
           >
             Learn React
-          </a>
-        </header>
+          </a>       
+          <button onClick={this.showNotification}>show</button>   
+        </header>        
       </div>
     );
   }
