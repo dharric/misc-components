@@ -22,10 +22,6 @@ export default class Notification extends React.Component {
         this.setState({ currentClass: 'card notification-start'})
     }
 
-    hide = () => {
-        
-    }
-
     render() {
         return (<div className={this.state.currentClass} style={{width: '18rem'}}>
             <div className="card-header">

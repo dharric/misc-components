@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
-import Notification from './components/Notification';
-import BoarderHighlight from './components/BoarderHighlight';
+import Notification from './components/notification/Notification';
+import BoarderHighlight from './components/boarderHighlight/BoarderHighlight';
 
 class App extends Component {
   constructor(props){
