@@ -6,24 +6,36 @@ export default class Notification extends React.Component {
         super(props);
 
         this.state = {
-            currentClass: 'card notification-end'
+            lastClass: 'card notification-end',
+            lastDisplayRequest: '' // show or hide
         }
     }
 
-    componentDidUpdate() {
-        if(this.state.currentClass === 'card notification-start'){
+    componentDidMount(){
+        if(this.state.lastClass === 'card notification-start'){
             setTimeout(() => {
-                this.setState({ currentClass: 'card notification-end'});
-            }, 3500);            
+                this.props.notificationComplete(this.props.index);
+                this.setState({ lastClass: 'card notification-end'});
+            }, 7000);            
         }
     }
 
-    show = () => {
-        this.setState({ currentClass: 'card notification-start'})
-    }
+    static getDerivedStateFromProps(props, state){
+        if(props.displayRequest === 'show' && state.lastDisplayRequest !== props.displayRequest){
+            return {
+                lastDisplayRequest: props.displayRequest,
+                lastClass: 'card notification-start'
+            }
+        }
+        return null;
+    }    
 
     render() {
-        return (<div className={this.state.currentClass} style={{width: '18rem'}}>
+        const style={
+            top: '10px',
+            width: '18rem'
+        };
+        return (<div className={this.state.lastClass} style={style}>
             <div className="card-header">
                 My Title
             </div>

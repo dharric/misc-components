@@ -4,7 +4,6 @@
 }
 
 @keyframes notify {
-    from { top: 10px }
     to { top: 70px }
 }
 
@@ -15,12 +14,12 @@
 
 .notification-start {
     position: absolute;
+    height: 250px;
     right: 10px;
-    top: 10px;
     animation: 
         notify-start .5s, 
-        notify 2s .5s, 
-        notify-end .5s 2.5s;
+        notify 1.5s .5s, 
+        notify-end .5s 4s;
     animation-fill-mode: forwards;
     color: black;
     padding: 5px;

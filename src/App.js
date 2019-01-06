@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
-import Notification from './components/notification/Notification';
-import BoarderHighlight from './components/boarderHighlight/BoarderHighlight';
+import NotificationService from './components/notification/NotificationService';
+// import BoarderHighlight from './components/boarderHighlight/BoarderHighlight';
 
 class App extends Component {
   constructor(props){
@@ -13,14 +13,14 @@ class App extends Component {
   showNotification = (e) => {
     e.preventDefault();
 
-    this.notification.current.show();
+    this.notification.current.addNote();
   }
 
   render() {
     return (
       <div>        
         <header className="App-header">
-          <BoarderHighlight ref={this.notification} />
+          <NotificationService ref={this.notification} />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
