@@ -2,3 +2,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 List of hopefully helpful react components
 
+License is MIT
